@@ -1,0 +1,165 @@
+/* Vibrant, modern and glassy UI experience for Tour of Heroes */
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #d8e3ff 0%, #f5eaff 40%, #c8faef 100%);
+  background-attachment: fixed;
+}
+
+/* Faded glass morphism card */
+div[style*="text-align:center"] {
+  margin: 44px auto 20px auto;
+  max-width: 540px;
+  padding: 32px 36px 22px 36px;
+  box-shadow: 0 6px 40px 0 rgba(48,33,132, 0.24), 0 2px 8px rgba(0,0,0,0.04);
+  border-radius: 1.5rem;
+  background: rgba(255,255,255,0.70);
+  backdrop-filter: blur(8px);
+  position: relative;
+  animation: fadeinup 1s both;
+}
+
+@keyframes fadeinup {
+  from { opacity:0; transform: translateY(40px); }
+  to { opacity:1; transform: none; }
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  background: linear-gradient(90deg, #1686fa 30%, #5f51da 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+  margin-top: 2px;
+  text-shadow: 0 4px 24px rgba(13,110,253,0.07);
+  padding: 0 4px;
+}
+
+img {
+  margin-top: 18px;
+  margin-bottom: 6px;
+  width: 220px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 1rem;
+  border: 2.5px solid #9ebfff7a;
+  box-shadow: 0 4px 32px #c1d7ff36, 0 1px 6px #3649b140;
+  background: rgba(226, 239, 255, 0.5);
+  filter: hue-rotate(-8deg) saturate(1.18);
+}
+
+h2 {
+  color: #3f468e;
+  font-size: 1.22rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 20px 0 10px 0;
+  padding-top: 10px;
+  text-align: left;
+  animation: fadeinup 1.2s 0.1s both;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 450px;
+  margin: 0 auto 26px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeinup 1.2s 0.19s both;
+}
+
+li {
+  border-radius: 18px;
+  background: rgba(246,249,255,0.94);
+  box-shadow: 0 2px 16px 0 #d4dbf9cc, 0 1px 8px 0 #9fa7b5a6;
+  margin: 0;
+  transition: 
+    box-shadow 0.20s,
+    background 0.23s,
+    transform 0.22s;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e2e9fe;
+}
+
+li:hover {
+  box-shadow: 0 4px 40px 0 #64a4fa51;
+  transform: translateY(-4px) scale(1.025);
+  background: rgba(199,226,255,0.98);
+  border-color: #aedaea;
+}
+
+li h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.12rem;
+  text-align: center;
+  background: none;
+  color: #3262a0;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: color 0.18s;
+}
+
+a {
+  color: #237bf5;
+  text-decoration: none;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+  font-size: 1.13rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: color .18s, background .16s;
+  background: linear-gradient(90deg, #fff 70%,#e9f6ff 100%);
+}
+
+a:hover {
+  color: #1971c2;
+  background: linear-gradient(93deg, #e0eafd 50%,#e7fffb 140%);
+}
+
+/* Animated router outlet region */
+router-outlet {
+  display: block;
+  margin-top: 28px;
+  animation: fadeinup 0.8s 0.4s both;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 660px) {
+  div[style*="text-align:center"] {
+    max-width: 99vw;
+    padding: 20px 7vw 19px 7vw;
+  }
+  ul {
+    max-width: 97vw;
+    gap: 14px;
+  }
+  img {
+    width: 84vw;
+    height: auto;
+  }
+}
+
+@media (max-width: 399px) {
+  h1 {
+    font-size: 1.35rem;
+  }
+  div[style*="text-align:center"] {
+    padding: 10px 0 10px 0;
+  }
+  ul {
+    gap: 8px;
+  }
+}
