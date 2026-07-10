@@ -57,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mapapps:build"
+            "buildTarget": "mapapps:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mapapps:build:production"
+              "buildTarget": "mapapps:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mapapps:build"
+            "buildTarget": "mapapps:build"
           }
         },
         "test": {
